@@ -1,0 +1,328 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Requisições
+meta:
+  id: wrk_bebb35fe6f2949609870257cfd1dc2c4
+  created: 1790032616073
+  modified: 1790032616073
+  description: ""
+collection:
+  - name: Products
+    meta:
+      id: fld_5160c191e5b1443e85bc75d0a53203f6
+      created: 1790032814100
+      modified: 1790032875401
+      sortKey: -1790032814100
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_196307904f594a56b997bbeee8ad11b6
+          created: 1790032888370
+          modified: 1790121479010
+          isPrivate: false
+          description: ""
+          sortKey: -1790032888370
+        method: GET
+        parameters:
+          - name: name
+            value: isc
+            description: ""
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_721bccc727ba463bad2ec40c5ffd2ac1
+          created: 1790115422396
+          modified: 1790120790215
+          isPrivate: false
+          description: ""
+          sortKey: -1790115422396
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Iscas de Tilápia",
+            	"price": 49.90
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/2"
+        name: Update
+        meta:
+          id: req_606fbda75be34e0da847aed18e9c8dfc
+          created: 1790121824782
+          modified: 1790122343621
+          isPrivate: false
+          description: ""
+          sortKey: -1790121824782
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Iscas de Tilápia",
+            	"price": 59.9
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/2"
+        name: Delete
+        meta:
+          id: req_fc757d5ec63a4a20836021bdcc3832b3
+          created: 1790122976357
+          modified: 1790123667025
+          isPrivate: false
+          description: ""
+          sortKey: -1790122976357
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: products
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Tables
+    meta:
+      id: fld_3a0e6983639a4c7d81fddbc81a2c6e2d
+      created: 1790198563812
+      modified: 1790198616450
+      sortKey: -1790198563812
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}"
+        name: Index
+        meta:
+          id: req_6daab302574a4890bb4d00688d3e68a6
+          created: 1790198617843
+          modified: 1790198663061
+          isPrivate: false
+          description: ""
+          sortKey: -1790198617843
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCES: tables
+    environmentPropertyOrder:
+      "&":
+        - RESOURCES
+  - name: Tables Sessions
+    meta:
+      id: fld_08bb0809e6ac4f6f80af831e1e806335
+      created: 1790200230589
+      modified: 1790200262267
+      sortKey: -1790200230589
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}"
+        name: Open
+        meta:
+          id: req_df7ac5ef0527448f9ca96a16bc2ba037
+          created: 1790200264278
+          modified: 1790288450736
+          isPrivate: false
+          description: ""
+          sortKey: -1790200264278
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"table_id": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}"
+        name: Index
+        meta:
+          id: req_9c6493d44d2f478bb930a2afb17b820b
+          created: 1790203824706
+          modified: 1790203838890
+          isPrivate: false
+          description: ""
+          sortKey: -1790203824706
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}/1"
+        name: Close
+        meta:
+          id: req_fbe7dc0dc0954fbf97cfcb8bfcf7fb2b
+          created: 1790204349201
+          modified: 1790204665343
+          isPrivate: false
+          description: ""
+          sortKey: -1790204349201
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCES: tables-sessions
+    environmentPropertyOrder:
+      "&":
+        - RESOURCES
+  - name: Orders
+    meta:
+      id: fld_b39d6e3181584e30a9bfa96a88d4dba9
+      created: 1790286686887
+      modified: 1790286723052
+      sortKey: -1790286686887
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}"
+        name: Create
+        meta:
+          id: req_effce19216744d2893778a9447cdaf41
+          created: 1790286693082
+          modified: 1790289033037
+          isPrivate: false
+          description: ""
+          sortKey: -1790286693082
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"table_session_id": 2,
+            	"product_id": 21,
+            	"quantity": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}/table-session/2"
+        name: Index
+        meta:
+          id: req_f71bee773de9420a8edfeae9c36cb708
+          created: 1790289479630
+          modified: 1790292845166
+          isPrivate: false
+          description: ""
+          sortKey: -1790289479630
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCES }}/table-session/2/total"
+        name: Show total
+        meta:
+          id: req_f72bf4c6a982445686d0346c7371854d
+          created: 1790294114930
+          modified: 1790294647521
+          isPrivate: false
+          description: ""
+          sortKey: -1790294114930
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCES: orders
+    environmentPropertyOrder:
+      "&":
+        - RESOURCES
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_555607d8b523b4de8901f82eb066f0945bd0cab3
+    created: 1790032616077
+    modified: 1790032616077
+environments:
+  name: Base Environment
+  meta:
+    id: env_555607d8b523b4de8901f82eb066f0945bd0cab3
+    created: 1790032616075
+    modified: 1790032678751
+    isPrivate: false
+  subEnvironments:
+    - name: Dev
+      meta:
+        id: env_7ef538690a5a4ba89b3cc06806b1d069
+        created: 1790032692818
+        modified: 1790032758395
+        isPrivate: false
+        sortKey: 1790032692818
+      data:
+        BASE_URL: localhost:3333
+      color: "#12af80"
